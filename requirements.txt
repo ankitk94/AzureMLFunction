@@ -1,0 +1,3 @@
+azure-cli
+numpy
+azureml-sdk
