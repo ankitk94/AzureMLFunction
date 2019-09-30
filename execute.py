@@ -1,10 +1,12 @@
 import numpy as np
+import logging
 
 import azureml.core
 from azureml.core import Workspace
 
 # check core SDK version number
 print("Azure ML SDK Version: ", azureml.core.VERSION)
+logging.info("Azure ML SDK Version: " + str(azureml.core.VERSION))
 
 # load workspace configuration from the config.json file in the current folder.
 ws = Workspace.from_config()
@@ -66,6 +68,7 @@ paths = [
 datastore = ws.get_default_datastore()
 datastore.upload(src_dir=data_folder, target_path='mnist', overwrite=True, show_progress=True)
 
+logging.info("Uploaded")
 
 datastore_paths = [
     (datastore, "test-images.gz"),
