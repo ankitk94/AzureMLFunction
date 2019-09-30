@@ -73,6 +73,7 @@ datastore_paths = [
     (datastore, "train-images.gz"),
     (datastore, "train-labels.gz"),
 ]
+
 dataset = Dataset.File.from_files(path = datastore_paths)
 
 from azureml.core.environment import Environment
