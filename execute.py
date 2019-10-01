@@ -11,7 +11,7 @@ logging.info("Azure ML SDK Version: " + str(azureml.core.VERSION))
 # load workspace configuration from the config.json file in the current folder.
 ws = Workspace.from_config()
 print(ws.name, ws.location, ws.resource_group, sep='\t')
-
+'''
 from azureml.core import Experiment
 experiment_name = 'sklearn-mnist'
 
@@ -100,7 +100,7 @@ est = SKLearn(source_directory=script_folder,
               compute_target=compute_target,
               environment_definition=env, 
               entry_script='train.py')
-
+'''
 
 run = exp.submit(config=est)
 run
